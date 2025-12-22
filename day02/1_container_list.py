@@ -74,8 +74,31 @@ print(numbers[5:2:-1])
 print(numbers[::-1]) # 리스트를 뒤집는 pythonic 한 방법
 
 # 리스트의 특징 2: 가변 자료형 
-# "가"능하다, "변"경이
+# "가"능하다, "변"경이 -> 수정, 삭제, 추가 가능
+# 객체 자체를 바꾸지 않고도 변경 가능
 
+print('= 변경 가능 =')
+# 1. 수정
+print(numbers)
+print(id(numbers))
+numbers[1] = -1
 
+print(numbers)
+print(id(numbers)) 
+# 값을 수정하더라도 객체의 주소값이 바뀌지 않는다.
 
+# 2. 추가
+# 리스트의 가장 마지막 위치에 추가 
 
+# numbers[5] = 60 # 에러발생
+numbers.append(60)
+print(numbers)
+
+print(id(numbers))
+
+# 3. 삭제
+numbers.pop() # 가장 마지막 요소 삭제
+print(numbers)
+print(id(numbers))
+
+# 자료형 자체를 변경하더라도, 주소값에 영향이 없다.
