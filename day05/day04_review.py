@@ -1,6 +1,7 @@
 # 복습
 # 다양한 자료를 이용하여, 정보를 구조화하는 방식이 알고리즘에서 중요하다.
 
+print('===== API 구조 실습 =====')
 # 복습 실습
 # users -> dict
 # users['total_user'] -> int
@@ -92,3 +93,86 @@ print(users['total_user'])
 # 유저 정보 업데이트
 users['information'].append({'name':'ken','age':10,'license':True}) # 추가
 print(users)
+
+print('===== 함수 (function) =====')
+
+students = ['하늘','수빈','동연','강현','선준','예솔']
+
+# 1. 사용자 정의 함수
+# 1단계 : 정의 (define)
+
+# 학생 목록과 이름이 들어가면, 출석 여부를 반환하는 함수
+def check(students_list, name): # 매개변수
+    
+    if name in students_list: # 멤버십 연산으로 포함 여부 확인
+        return f'{name}님은 출석하셨습니다.'
+    else:
+        return f'{name}님은 출석하지 않으셨습니다.'
+    
+# 2단계 : 호출하기 (call)
+print(check(students,'수빈')) # 인자 = students, '채원'/'수빈'
+
+# 만약 고정된 학생 목록이 존재한다면, 굳이 매개변수로 빼지 않아도 됨
+def check(name): # 매개변수
+    students_list = ['하늘','수빈','동연','강현','선준','예솔','하비','동호','채원',
+                    '효진','세연']
+    if name in students_list: # 멤버십 연산으로 포함 여부 확인
+        return f'{name}님은 우리반 학생입니다.'
+    else:
+        return f'{name}님은 우리반 학생이 아닙니다.'
+    
+# print(check(['지원','하은','근표'],'하은')) # 설계한대로 사용하지 않으면, 에러 발생
+
+# 2. 내장함수
+print(students) # 터미널 상에 출력
+print(len(students)) # 컨테이너 자료형 값의 갯수를 반환 -> 길이
+
+# print(sum(students)) # 에러 발생
+# 모든 함수가 모든 자료형에 사용 가능한 것은 아니다.
+
+# 내장함수 sorted()
+# -> 컨테이너 자료형에만 적용됨
+print(sorted(students)) # (기본) 오름차순 정렬
+print(sorted(students, reverse=True)) # 내림차순 정렬
+
+# print(sorted([1,2,3,-100,'hello']))
+# TypeError: '<' not supported between instances of 'str' and 'int'
+# 설계된 대로 사용해야 작동한다.
+
+# 익명함수 lambda
+# 사용자 정의 함수 중, 이름을 붙일 필요가 없다고 판단
+# -> 일회성으로 사용
+
+a =  (lambda x:-x)(-1)
+print(a)
+
+# 흔한 사용 방식
+example = [(0,2),(2,3),(1,4),(0,-1),(100,-5)]
+
+print(type(example)) # <class 'list'>
+print(type(example[0])) # <class 'tuple'>
+# 리스트 안에 튜플이 존재!
+
+print(len(example))
+
+# 정렬하려고 합니다!
+example_a = sorted(example)
+
+print(example)
+
+# 정렬 -> 기준이 필요
+# 2번째 값 기준, 내림차순 정렬
+example_b = sorted(example, key=lambda x:-x[1])
+
+# example 
+# [(0, 2), (2, 3), (1, 4), (0, -1), (100, -5)]
+
+# 첫 번째 (0, 2) -> -2 (이걸 기준으로 삼겠다!)
+# 두 번째 (2, 3) -> -3
+# 세 번째 (1, 4) -> -4
+# 네 번째 (0, -1) -> 1
+# 다섯 번째 (100, -5) -> 5
+# => 람다함수를 거쳐서 나온 값을 기준으로 "오름차순"
+
+print(example_b)
+# [(1, 4), (2, 3), (0, 2), (0, -1), (100, -5)]
