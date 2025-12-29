@@ -10,15 +10,15 @@
 # ---------------------------------------------------------
 # [Step 1] 첫 번째 숫자를 입력받으세요.
 # 힌트: input()으로 받은 값은 int()를 사용해 정수로 변환해야 계산이 가능합니다.
-num1 = # TODO: 여기에 코드를 작성하세요.
+num1 = int(input('첫 번째 숫자를 입력해주세요'))
 
 # [Step 2] 두 번째 숫자를 입력받으세요.
-num2 = # TODO: 여기에 코드를 작성하세요.
+num2 =  int(input('두 번째 숫자를 입력해주세요'))
 
 # [Step 3] 두 숫자의 합을 계산하고 출력하세요.
-add_result = # TODO: num1과 num2를 더하세요.
+add_result = num1 + num2
 print(f"두 수의 합: {add_result}")
 
 # [Step 4] 두 숫자의 곱을 계산하고 출력하세요.
-mul_result = # TODO: num1과 num2를 곱하세요.
+mul_result = num1 * num2
 print(f"두 수의 곱: {mul_result}")
