@@ -4,7 +4,13 @@
 scores = [['Kim', 88], ['Lee', 95], ['Park', 92], ['Choi', 85], ['Jung', 95], ['Kang', 92]]
 
 # 로직 작성
+score = set(score[1] for score in scores)
+score_sort = sorted(list(score))
+# score_sort = [90]
+if len(score_sort) < 2:
+    runner_up_students = "두번째로 높은 점수는 없습니다."
+else:
+    second_score = score_sort[-2]
+    runner_up_students = [name[0] for name in scores if name[1] == second_score]
 
-
-
-# print(runner_up_students) # ['Park', 'Kang']
+print(runner_up_students,second_score) # ['Park', 'Kang']

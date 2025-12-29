@@ -14,7 +14,9 @@ books = [
 ]
 
 # 로직 작성 (sorted() 또는 sort() 함수와 lambda를 활용하세요)
+sorted_books = sorted(books,key = lambda x : (-x['loans'],-x['year']) )
 
 
-
-# print(sorted_books)
+print(sorted_books)
+for book in sorted_books:
+    print(f'{book['title']} 대출 횟수 : {book['loans']} 발행년도 : {book['year']}')

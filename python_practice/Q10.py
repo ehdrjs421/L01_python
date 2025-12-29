@@ -9,7 +9,16 @@ sales = [
 ]
 
 # 로직 작성
+total_sales = {}
+for sale in sales:
+    item = sale['item']
+    price = sale['price']
+    
+    if item in total_sales.keys():
+        total_sales[item] += price
+    else:
+        total_sales[item] = price
 
 
 
-# print(total_sales) # {'Apple': 2200, 'Banana': 1100, 'Grape': 2000}
+print(total_sales) # {'Apple': 2200, 'Banana': 1100, 'Grape': 2000}

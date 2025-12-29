@@ -11,5 +11,12 @@ users = {
 
 names = []
 # 로직 작성
+info = users['information']
+total = users['total_user']
+
+names = [infos['name'] for infos in info]
+# for i in range(total):
+#     info_user = info[i]
+#     names.append(info_user.get('name'))
 
 print(names)  # ['alex', 'june', 'peter']

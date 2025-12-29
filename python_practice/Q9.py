@@ -4,7 +4,14 @@
 emails = ['abc@naver.com', 'def@gmail.com', 'ghi@naver.com', 'jkl@daum.net', 'mno@gmail.com']
 
 # 로직 작성
+domain = set()
+for mail in emails:
+    a = mail.split("@")
+    domain.add(a[1])
+
+unique_domains = sorted(list(domain))
 
 
 
-# print(unique_domains) # ['daum.net', 'gmail.com', 'naver.com']
+
+print(unique_domains) # ['daum.net', 'gmail.com', 'naver.com']

@@ -6,7 +6,6 @@ A = int(input())
 B = int(input())
 
 def get_absolute_value(x, y):
-    # pass를 지우고 로직을 작성합니다.
-    pass
+    return(abs(x-y))
 
 print(get_absolute_value(A, B))

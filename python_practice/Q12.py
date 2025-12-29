@@ -5,7 +5,19 @@
 data = [10, 20, None, 30, 40, None, 50]
 
 # 로직 작성
+total_sum = 0
+sums = 0
+check = 0
+for num in data:
+    if num != None:
+        sums += num
+        check += 1
+ave = int(sums/check)
+
+for i in range(len(data)):
+    if data[i] == None:
+        data[i] = ave
+total_sum = sum(data)
 
 
-
-# print(total_sum) # 210 (평균이 30이므로 None 2개가 30으로 바뀌어 합계 210)
+print(total_sum) # 210 (평균이 30이므로 None 2개가 30으로 바뀌어 합계 210)

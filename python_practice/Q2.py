@@ -4,8 +4,9 @@
 word = input()
 # 로직 작성
 
+reversed_word = word[::-1]
 
 
 
 
-# print(reversed_word)  # 'banana' 입력 시 reversed_word == 'ananab'
+print(reversed_word)  # 'banana' 입력 시 reversed_word == 'ananab'

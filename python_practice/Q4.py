@@ -9,9 +9,12 @@
 # 합격일 경우 "PASS", 불합격일 경우 "FAIL"을 반환
 
 def check_result(scores):
-    # pass를 지우고 로직을 작성합니다.
-    pass
-
+    if sum(scores)/len(scores) < 60:
+        return 'FAIL'
+    for i in scores:
+        if i < 40:
+            return 'FAIL'
+    return 'PASS'
 # 테스트 코드
 print(f"결과 1 (PASS 예상): {check_result([80, 90, 75])}")
 print(f"결과 2 (FAIL 예상): {check_result([100, 100, 35])}")
