@@ -16,12 +16,13 @@ student = {
 # ---------------------------------------------------------
 # [Step 1] 이름을 출력하세요.
 # TODO
-
+print(student["name"])
 # [Step 2] 나이를 21로 수정하세요.
 # TODO
-
+student["age"] = 21
 # [Step 3] "grade" 키와 "A" 값을 추가하세요.
 # TODO
-
+student["grade"] = "A"
 # [Step 4] 전체 출력
 # TODO
+print(student)

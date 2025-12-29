@@ -10,11 +10,12 @@
 # [Step 1] 함수를 정의하세요.
 def add_numbers(a, b):
     # TODO: 합을 반환하도록 작성하세요.
-    pass # pass는 나중에 코드를 채우겠다는 뜻입니다.
+    return a + b
 
 # [Step 2] 함수를 호출하고 결과를 변수에 저장하세요.
-# result = add_numbers(10, 20)
+result = add_numbers(10, 20)
 # TODO
 
 # [Step 3] 결과를 출력하세요.
 # TODO
+print(result)
