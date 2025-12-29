@@ -18,3 +18,32 @@ print(subtract(1, 10000))
 from module_A import subtract as sb
 
 print(sb(1, 10000))
+
+
+# 파이썬 내장 모듈
+
+import random
+
+# 무작위 정수 값 1개 추출
+number = random.randint(1, 5) # 1,2,3,4,5 중 무작위 1개 반환
+print(number)
+
+# 주어진 리스트 내 무작위 1개 추출
+numbers = ['십','이십',30.0,40,[]]
+
+print(random.choice(numbers)) # 1개 추출
+print(random.sample(numbers, 3)) # k개 추출
+
+random.shuffle(numbers) # 전체를 섞기
+print(numbers)
+
+
+import time
+
+print(time.time()) # 초 단위 시간 확인
+time.sleep(3) # 일정 시간동안 프로그램의 동작 정지
+print('3초가 지났습니다.')
+
+for i in range(5):
+    time.sleep(1)
+    print(f'1초 기다린 후, {i} 출력')
