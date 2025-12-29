@@ -176,3 +176,95 @@ example_b = sorted(example, key=lambda x:-x[1])
 
 print(example_b)
 # [(1, 4), (2, 3), (0, 2), (0, -1), (100, -5)]
+
+
+# 메서드
+# 메서드는 함수에 포함된다.
+# 함수 != 메서드
+# => "특정 자료형"에 딸린 함수
+
+# 자료형마다 특징이 다 달라서!
+
+# 리스트 메서드
+# 순서 O, 변경 O, 중복 O
+numbers = [10,20,30,40,50]
+
+# 추가 : 순서가 있게 추가 (맨 끝에)
+numbers.append(60)
+print(numbers) 
+# 나 자신을 바꿀 수가 있기 때문에 (변경 O)
+# 새로 반환되는 리스트가 아닌 기존 numbers 에 추가
+
+# 삭제 : 위치(순서 O)를 기준으로 삭제
+numbers.pop(1)
+print(numbers)
+
+# 추가 : 위치를 기준으로 추가
+numbers.insert(1, 200)
+print(numbers)
+
+# 추가 여러개
+# numbers.append(1,2,3,4)
+# numbers.append([1,2,3,4])
+numbers.extend([1,2,3,4])
+
+print(numbers)
+
+
+# 문자열
+# 순서 O, 변경 X, 중복 O
+
+word = 'helllllllo'
+print(word[0])
+
+# 순서 O
+print(word.index('o'))
+
+# 중복 O
+print(word.count('l'))
+
+# 변경 X
+word_lst = word.split('e')
+
+print(word)
+print(word_lst)
+
+new_word = word.replace('l','x')
+print(new_word)
+
+word_join = '~'.join(word_lst)
+print(word_join)
+
+# 딕셔너리
+# 순서 X (키-값), 변경 O, 중복 X (키의 중복이 안됨)
+
+students = {'kyle':10,'jun':23,'alex':30}
+print(students['kyle'])
+# print(students['ken']) # KeyError: 'ken'
+
+# 순서 X
+# 값 조회
+print(students.get('kyle'))
+print(students.get('ken')) # 조회하고자 하는 값이 없더라도 작동됨
+
+# 변경 O
+students.update({'ken':40})
+print(students)
+
+# 집합
+# 수학 집합 연산을 그대로 따름
+# 순서 X, 변경 O, 중복X
+
+numbers = {1,2,3,4,5}
+numbers_2 = {3,4,5,6,7}
+
+numbers.add(10000)
+numbers.add(10000)
+numbers.add(10000)
+numbers.add(10000)
+print(numbers)
+
+# 집합연산 메서드
+print(numbers.intersection(numbers_2))
+print(numbers.union(numbers_2))
+print(numbers.difference(numbers_2))
